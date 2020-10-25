@@ -26,14 +26,11 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        try {
-            String name = this.name;
-            String surname = this.surname;
-        } catch (IllegalStateException e) {
-            System.out.println("Введеные вами данные неккоректны! Проверьте имя и фамилию.");
-        }
+        String name = this.name;
+        String surname = this.surname;
         int age = this.age;
         String address = this.address;
+        if (name == null || surname == null) throw new IllegalArgumentException("Некорректные данные!");
         return new Person(name, surname, age, address);
     }
 }
