@@ -30,7 +30,7 @@ public class PersonBuilder {
         String surname = this.surname;
         int age = this.age;
         String address = this.address;
-        if (name == null || surname == null) throw new IllegalArgumentException("Некорректные данные!");
+        if (name == null || surname == null) throw new IllegalStateException("Некорректные данные!");
         return new Person(name, surname, age, address);
     }
 }
